@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from '@firebase/util';
+import { Observable } from 'rxjs/Observable';
 import { switchMap, first } from "rxjs/operators";
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { of } from 'rxjs/observable/of';
 
 /*
   Generated class for the AuthProvider provider.
@@ -13,24 +15,24 @@ import { AngularFireAuth } from 'angularfire2/auth';
 @Injectable()
 export class AuthProvider {
 
-  user: any;
+  user: Observable<any>;
 
-  constructor(public http: HttpClient, afAuth: AngularFireAuth) {
+  constructor(public http: HttpClient, afAuth: AngularFireAuth, db: AngularFireDatabase) {
     console.log('Hello AuthProvider Provider');
 
     this.user = afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
-          return user;
+          return db.object(`users/${user.uid}/info`).valueChanges();
         } else {
-          return null;
+          return of(null);
         }
       })
     );
   }
 
-  async getCurrentUser() {
-    return this.user;
+  async getCurrentUser(): Promise<any> {
+    return this.user.pipe(first()).toPromise();
   }
 
 }
