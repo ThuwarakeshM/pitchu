@@ -9,6 +9,19 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthProvider } from '../providers/auth/auth';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyCvFcbhRfgr-94Gnl3Ck5-dh6oSFd4d7Fc",
+    authDomain: "oray-42ecb.firebaseapp.com",
+    databaseURL: "https://oray-42ecb.firebaseio.com",
+    projectId: "oray-42ecb",
+    storageBucket: "oray-42ecb.appspot.com",
+    messagingSenderId: "418246721169"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -17,6 +30,9 @@ import { AuthProvider } from '../providers/auth/auth';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -26,6 +42,7 @@ import { AuthProvider } from '../providers/auth/auth';
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider
   ]
