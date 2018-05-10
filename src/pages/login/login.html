@@ -14,6 +14,25 @@
 
 
 <ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+
+  <button ion-button (tap) ="loginWithEmail()">SignIn</button>
+  <button ion-button (tap)="signUp()">SignUp</button>
+
   <button ion-button icon-left full (tap)="loginWithFacebook()">
     <ion-icon name="logo-facebook"></ion-icon>
 

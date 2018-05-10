@@ -17,6 +17,9 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
+  email: string;
+  password: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
   }
 
@@ -32,6 +35,16 @@ export class LoginPage {
 
   async loginWithGoogle() {
     await this.auth.GoogleLogin();
+    await this.navCtrl.setRoot(HomePage);
+  }
+
+  async loginWithEmail() {
+    await this.auth.EmailLogin(this.email, this.password);
+    await this.navCtrl.setRoot(HomePage);
+  }
+
+  async signUp() {
+    await this.auth.EmailSignUp(this.email, this.password);
     await this.navCtrl.setRoot(HomePage);
   }
 }
