@@ -29,9 +29,18 @@
 
   </ion-list>
 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button  full (tap)="loginWithEmail()">SignIn</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button full (tap)="signUp()">SignUp</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <button ion-button (tap) ="loginWithEmail()">SignIn</button>
-  <button ion-button (tap)="signUp()">SignUp</button>
+
 
   <button ion-button icon-left full (tap)="loginWithFacebook()">
     <ion-icon name="logo-facebook"></ion-icon>

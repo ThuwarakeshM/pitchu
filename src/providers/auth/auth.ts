@@ -61,7 +61,7 @@ export class AuthProvider {
 
   async EmailLogin(username: string, password: string): Promise<void> {
     try {
-      const credential = await this.afAuth.auth.signInWithEmailAndPassword(username, password);
+      await this.afAuth.auth.signInWithEmailAndPassword(username, password);
     } catch (err) {
       console.log(err);
     }
