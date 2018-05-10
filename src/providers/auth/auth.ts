@@ -60,18 +60,24 @@ export class AuthProvider {
   }
 
   async EmailLogin(username: string, password: string): Promise<void> {
-    console.log('called Email Login!');
     try {
-      await this.afAuth.auth.signInWithEmailAndPassword(username, password);
+      const credential = await this.afAuth.auth.signInWithEmailAndPassword(username, password);
     } catch (err) {
       console.log(err);
     }
   }
 
   async EmailSignUp(username: string, password: string): Promise<void> {
-    console.log('called SignUp!');
     try {
-      await this.afAuth.auth.createUserWithEmailAndPassword(username, password);
+      const credential = await this.afAuth.auth.createUserWithEmailAndPassword(username, password);
+      const user = {
+        uid: credential.uid,
+        email: credential.email,
+        displayName: credential.displayName,
+        photoURL: credential.photoURL
+      }
+      return await this.updateUserData(user);
+      
     } catch (err) {
       console.log(err);
     }
