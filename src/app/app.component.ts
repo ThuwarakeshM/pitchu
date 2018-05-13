@@ -3,8 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
 import { AuthProvider } from '../providers/auth/auth';
 
 @Component({
@@ -22,16 +20,16 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
+      { title: 'Home', component: 'HomePage' },
     ];
 
     platform.ready().then(() => {
       auth.getCurrentUser().then(user => {
         if (user) {
-          this.rootPage = HomePage;
+          this.rootPage = 'HomePage';
           console.log(user);
         } else {
-          this.rootPage = LoginPage;
+          this.rootPage = 'LoginPage';
         }
       })
     });
