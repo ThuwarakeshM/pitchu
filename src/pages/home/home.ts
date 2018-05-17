@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
-import { LoginPage } from '../login/login';
 
+@IonicPage({
+  name: 'HomePage'
+})
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -19,7 +21,7 @@ export class HomePage {
   
   async logout () {
     await this.auth.logout();
-    await this.navCtrl.setRoot(LoginPage);
+    await this.navCtrl.setRoot('LoginPage');
 
   }
 
