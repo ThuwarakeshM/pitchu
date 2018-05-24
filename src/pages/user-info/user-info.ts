@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({name: 'UserInfo'})
 @Component({
   selector: 'page-user-info',
   templateUrl: 'user-info.html',
