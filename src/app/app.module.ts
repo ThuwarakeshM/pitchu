@@ -13,6 +13,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { UserInfoProvider } from '../providers/user-info/user-info';
+import { ProductInfoProvider } from '../providers/product-info/product-info';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCvFcbhRfgr-94Gnl3Ck5-dh6oSFd4d7Fc",
@@ -45,7 +46,8 @@ export const firebaseConfig = {
     AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    UserInfoProvider
+    UserInfoProvider,
+    ProductInfoProvider
   ]
 })
 export class AppModule {}
