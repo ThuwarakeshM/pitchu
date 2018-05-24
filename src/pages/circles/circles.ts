@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({ name: 'CirclesPage' })
 @Component({
   selector: 'page-circles',
   templateUrl: 'circles.html',

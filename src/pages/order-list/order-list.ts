@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({ name: 'OrderListPage' })
 @Component({
   selector: 'page-order-list',
   templateUrl: 'order-list.html',
