@@ -22,4 +22,8 @@ export class UserInfoPage {
     console.log('ionViewDidLoad UserInfoPage');
   }
 
+  back() {
+    this.navCtrl.setRoot('HomePage');
+  }
+
 }
