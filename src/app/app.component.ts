@@ -15,7 +15,11 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, auth: AuthProvider) {
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen, 
+    public auth: AuthProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -53,5 +57,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component, {origin: page.title});
+  }
+
+  async logout() {
+    await this.auth.logout();
+    this.nav.setRoot('LoginPage');
   }
 }
