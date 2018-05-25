@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
 
 /**
  * Generated class for the CirclesPage page.
@@ -15,11 +16,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CirclesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CirclesPage');
+    return this.auth.isLoggedIn();
   }
 
 }
