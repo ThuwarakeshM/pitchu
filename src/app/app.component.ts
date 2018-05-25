@@ -22,6 +22,9 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: 'HomePage' },
       { title: 'Profile', component: 'UserInfoPage' },
+      { title: 'Market', component: 'NavHubPage'},
+      { title: 'Connections', component: 'NavHubPage'},
+      { title: 'Orders', component: 'NavHubPage'},
     ];
 
     platform.ready().then(() => {
@@ -49,6 +52,6 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav.setRoot(page.component, {origin: page.title});
   }
 }
