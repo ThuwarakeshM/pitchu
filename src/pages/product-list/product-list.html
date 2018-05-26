@@ -18,7 +18,7 @@
     <ion-item-divider color="light" (click)="foldToggler(sec)">{{sec.section_title}}</ion-item-divider>
     <ion-grid *ngIf="!sec.folded">
       <ion-row>
-        <ion-col col-6 *ngFor="let item of sec.items">
+        <ion-col col-6 *ngFor="let item of sec.items" (click)="goToProduct(item)">
           <ion-card>
             <ion-card-header>{{item.name}}</ion-card-header>
             <img [src]="item.img">

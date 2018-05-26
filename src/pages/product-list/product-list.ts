@@ -90,4 +90,8 @@ export class ProductListPage {
     sec.folded = sec.folded ? false : true;
   }
 
+  goToProduct(item) {
+    this.navCtrl.push('ProductInfoPage', {item: item})
+  }
+
 }
