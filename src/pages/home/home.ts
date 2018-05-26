@@ -18,11 +18,5 @@ export class HomePage {
   ionViewCanEnter() {
     return this.auth.isLoggedIn();
   }
-  
-  async logout () {
-    await this.auth.logout();
-    await this.navCtrl.setRoot('LoginPage');
-
-  }
 
 }
