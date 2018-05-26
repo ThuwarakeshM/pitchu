@@ -15,14 +15,16 @@
 
 <ion-content padding>
   <ion-grid>
-    <ion-row *ngFor="let item of items">
-      <ion-card>
-        <ion-card-header>{{item.name}}</ion-card-header>
-        <img [src]="item.img">
-        <ion-card-content>
-          <p>{{item.desc}}</p>
-        </ion-card-content>
-      </ion-card>
+    <ion-row>
+      <ion-col col-6 *ngFor="let item of items">
+        <ion-card>
+          <ion-card-header>{{item.name}}</ion-card-header>
+          <img [src]="item.img">
+          <ion-card-content>
+            <p>{{item.desc}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
