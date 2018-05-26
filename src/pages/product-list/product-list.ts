@@ -18,8 +18,44 @@ export class ProductListPage {
 
   title: string;
 
+  items: Array<{
+    id: string
+    name: string,
+    img: string,
+    desc: string
+  }>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
     this.title = navParams.get('origin');
+
+    // The below is just a sample for dev purposes
+    // This should be removed once the services are risen
+    this.items = [
+      {
+        id:'1',
+        name:'Product1',
+        desc:'Product1 Desc',
+        img:'assets/imgs/logo.png'
+      },
+      {
+        id:'2',
+        name:'Product2',
+        desc:'Product2 Desc',
+        img:'assets/imgs/logo.png'
+      },
+      {
+        id:'3',
+        name:'Product3',
+        desc:'Product3 Desc',
+        img:'assets/imgs/logo.png'
+      },
+      {
+        id:'4',
+        name:'Product4',
+        desc:'Product4 Desc',
+        img:'assets/imgs/logo.png'
+      }
+    ]
   }
 
   ionViewDidLoad() {
