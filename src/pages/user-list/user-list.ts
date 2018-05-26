@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
+import { item } from '../../item';
 
 /**
  * Generated class for the UserListPage page.
@@ -16,11 +17,9 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class UserListPage {
 
-  items: Array<{
-    id: string
-    name: string,
-    img: string,
-    desc: string
+  item_set: Array<{
+    section_title: string,
+    items: Array<item>
   }>;
 
   title:  string;
@@ -28,32 +27,54 @@ export class UserListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
     this.title = navParams.get('origin');
 
-    this.items = [
+    this.item_set = [
       {
-        id:'1',
-        name:'User1',
-        desc:'User1 Desc',
-        img:'assets/imgs/logo.png'
+        section_title: 'Aperal',
+        items: [
+          {
+            id:'1',
+            name:'User1',
+            desc: 'User1 Desc',
+            img: 'assets/imgs/logo.png'
+          },
+          {
+            id:'2',
+            name:'User2',
+            desc: 'User2 Desc',
+            img: 'assets/imgs/logo.png'
+          },
+          {
+            id:'3',
+            name:'User3',
+            desc: 'User3 Desc',
+            img: 'assets/imgs/logo.png'
+          }
+        ]
       },
       {
-        id:'2',
-        name:'User2',
-        desc:'User2 Desc',
-        img:'assets/imgs/logo.png'
-      },
-      {
-        id:'3',
-        name:'User3',
-        desc:'User3 Desc',
-        img:'assets/imgs/logo.png'
-      },
-      {
-        id:'4',
-        name:'User4',
-        desc:'User4 Desc',
-        img:'assets/imgs/logo.png'
+        section_title: 'Cosmetics',
+        items: [
+          {
+            id:'4',
+            name:'User4',
+            desc: 'User4 Desc',
+            img: 'assets/imgs/logo.png'
+          },
+          {
+            id:'5',
+            name:'User5',
+            desc: 'User5 Desc',
+            img: 'assets/imgs/logo.png'
+          },
+          {
+            id:'6',
+            name:'User6',
+            desc: 'User6 Desc',
+            img: 'assets/imgs/logo.png'
+          }
+        ]
       }
-    ]
+    ];
   }
 
   ionViewDidLoad() {
