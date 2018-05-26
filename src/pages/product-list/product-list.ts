@@ -16,7 +16,10 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class ProductListPage {
 
+  title: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
+    this.title = navParams.get('origin');
   }
 
   ionViewDidLoad() {
