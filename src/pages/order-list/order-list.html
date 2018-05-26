@@ -14,8 +14,8 @@
 
 
 <ion-content padding>
-  <ion-item-group *ngFor="let sec of item_set" (click)="foldToggler(sec)">
-    <ion-item-divider color="light">{{sec.section_title}}</ion-item-divider>
+  <ion-item-group *ngFor="let sec of item_set">
+    <ion-item-divider color="light" (click)="foldToggler(sec)">{{sec.section_title}}</ion-item-divider>
     <div *ngIf="!sec.folded">
       <ion-item *ngFor="let item of sec.items">
         <ion-avatar item-start>
