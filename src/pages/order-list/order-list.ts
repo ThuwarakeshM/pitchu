@@ -87,4 +87,8 @@ export class OrderListPage {
     sec.folded = sec.folded ? false : true;
   }
 
+  goToOrder(item) {
+    this.navCtrl.push('OrderInfoPage', {item: item});
+  }
+
 }
