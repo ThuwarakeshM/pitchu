@@ -17,18 +17,11 @@ import { item } from '../../item';
 })
 export class UserInfoPage {
 
-  item: item = {
-    id: '1',
-    name: 'myname',
-    desc: 'mydesc',
-    img: 'assets/imgs/logo.png'
-  };
+  item: item;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
-    const i = navParams.get('item');
-    if (i) {
-      this.item = i;
-    }
+    this.item = navParams.get('item');
+
   }
 
   ionViewDidLoad() {
