@@ -47,8 +47,8 @@ export class NavHubPage {
     this.navCtrl.setRoot('HomePage');
   }
 
-  goToPage(link) {
-    this.navCtrl.push(link)
+  goToPage(link, origin) {
+    this.navCtrl.push(link, {origin: origin});
   }
 
 }
