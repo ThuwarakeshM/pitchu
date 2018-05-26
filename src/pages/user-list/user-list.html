@@ -17,7 +17,7 @@
   <ion-item-group *ngFor="let sec of item_set">
     <ion-item-divider color="light" (click)="foldToggler(sec)">{{sec.section_title}}</ion-item-divider>
     <div *ngIf="!sec.folded">
-      <ion-item *ngFor="let item of sec.items">
+      <ion-item *ngFor="let item of sec.items" (click)="goToUser(item)">
         <ion-avatar item-start>
           <img [src]="item.img">
         </ion-avatar>

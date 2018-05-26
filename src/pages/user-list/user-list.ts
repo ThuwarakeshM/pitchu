@@ -88,4 +88,8 @@ export class UserListPage {
     sec.folded = sec.folded ? false : true;
   }
 
+  goToUser(item) {
+    this.navCtrl.push('UserInfoPage', {item: item});
+  }
+
 }
