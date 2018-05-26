@@ -28,7 +28,7 @@ export class NavHubPage {
     if (this.title === 'Market') {
       this.items.push({ title: 'MyProducts', img: 'assets/imgs/logo.png', link:'ProductListPage' })
       this.items.push({ title: 'Favorites', img: 'assets/imgs/logo.png', link:'ProductListPage' })
-      this.items.push({ title: 'Connections', img: 'assets/imgs/logo.png', link:'ProductListPage' })
+      this.items.push({ title: "Connections' Products", img: 'assets/imgs/logo.png', link:'ProductListPage' })
     } else if (this.title === 'Connections') {
       this.items.push({ title: 'MyConnections', img: 'assets/imgs/logo.png', link:'UserListPage' })
       this.items.push({ title: 'Requests Sent', img: 'assets/imgs/logo.png', link:'UserListPage' })
