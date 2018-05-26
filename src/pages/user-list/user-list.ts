@@ -19,6 +19,7 @@ export class UserListPage {
 
   item_set: Array<{
     section_title: string,
+    folded: boolean;
     items: Array<item>
   }>;
 
@@ -30,6 +31,7 @@ export class UserListPage {
     this.item_set = [
       {
         section_title: 'Aperal',
+        folded: true,
         items: [
           {
             id:'1',
@@ -53,6 +55,7 @@ export class UserListPage {
       },
       {
         section_title: 'Cosmetics',
+        folded: true,
         items: [
           {
             id:'4',
@@ -79,6 +82,10 @@ export class UserListPage {
 
   ionViewDidLoad() {
     return this.auth.isLoggedIn();
+  }
+
+  foldToggler(sec) {
+    sec.folded = sec.folded ? false : true;
   }
 
 }
