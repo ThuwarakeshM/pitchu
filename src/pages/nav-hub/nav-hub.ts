@@ -26,16 +26,16 @@ export class NavHubPage {
     this.items = [];
 
     if (this.title === 'Market') {
-      this.items.push({ title: 'MyProducts', img: 'assets/imgs/logo.png', link:'#' })
-      this.items.push({ title: 'Favorites', img: 'assets/imgs/logo.png', link:'#' })
-      this.items.push({ title: 'Connections', img: 'assets/imgs/logo.png', link:'#' })
+      this.items.push({ title: 'MyProducts', img: 'assets/imgs/logo.png', link:'ProductListPage' })
+      this.items.push({ title: 'Favorites', img: 'assets/imgs/logo.png', link:'ProductListPage' })
+      this.items.push({ title: 'Connections', img: 'assets/imgs/logo.png', link:'ProductListPage' })
     } else if (this.title === 'Connections') {
-      this.items.push({ title: 'MyConnections', img: 'assets/imgs/logo.png', link:'#' })
-      this.items.push({ title: 'Requests Sent', img: 'assets/imgs/logo.png', link:'#' })
-      this.items.push({ title: 'Requests Received', img: 'assets/imgs/logo.png', link:'#' })
+      this.items.push({ title: 'MyConnections', img: 'assets/imgs/logo.png', link:'UserListPage' })
+      this.items.push({ title: 'Requests Sent', img: 'assets/imgs/logo.png', link:'UserListPage' })
+      this.items.push({ title: 'Requests Received', img: 'assets/imgs/logo.png', link:'UserListPage' })
     } else if (this.title === 'Orders') {
-      this.items.push({ title: 'Drafted Orders', img: 'assets/imgs/logo.png', link:'#' })
-      this.items.push({ title: 'Actual Orders', img: 'assets/imgs/logo.png', link:'#' })      
+      this.items.push({ title: 'Drafted Orders', img: 'assets/imgs/logo.png', link:'OrderListPage' })
+      this.items.push({ title: 'Actual Orders', img: 'assets/imgs/logo.png', link:'OrderListPage' })      
     }
   }
 
@@ -45,6 +45,10 @@ export class NavHubPage {
 
   back() {
     this.navCtrl.setRoot('HomePage');
+  }
+
+  goToPage(link) {
+    this.navCtrl.push(link)
   }
 
 }
