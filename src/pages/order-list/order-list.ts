@@ -21,6 +21,7 @@ export class OrderListPage {
 
   item_set: Array<{
     section_title: string,
+    folded: boolean;
     items: Array<item>
   }>;
 
@@ -29,6 +30,7 @@ export class OrderListPage {
     this.item_set = [
       {
         section_title: 'Aperal',
+        folded:true,
         items: [
           {
             id:'1',
@@ -52,6 +54,7 @@ export class OrderListPage {
       },
       {
         section_title: 'Cosmetics',
+        folded: true,
         items: [
           {
             id:'4',
@@ -78,6 +81,10 @@ export class OrderListPage {
 
   ionViewDidLoad() {
     return this.auth.isLoggedIn();
+  }
+
+  foldToggler(sec) {
+    sec.folded = sec.folded ? false : true;
   }
 
 }
