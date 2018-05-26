@@ -33,6 +33,7 @@ export class NavHubPage {
       this.items.push({ title: 'MyConnections', img: 'assets/imgs/logo.png', link:'UserListPage' })
       this.items.push({ title: 'Requests Sent', img: 'assets/imgs/logo.png', link:'UserListPage' })
       this.items.push({ title: 'Requests Received', img: 'assets/imgs/logo.png', link:'UserListPage' })
+      this.items.push({ title: 'Circles', img: 'assets/imgs/logo.png', link:'CirclesPage' })
     } else if (this.title === 'Orders') {
       this.items.push({ title: 'Drafted Orders', img: 'assets/imgs/logo.png', link:'OrderListPage' })
       this.items.push({ title: 'Actual Orders', img: 'assets/imgs/logo.png', link:'OrderListPage' })      
